@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Roboto&display=swap');
+
+ 
+ 
+ * {
+    margin: 0;
+    padding: 0;
+ }
+
+ body{
+    background-color: gray;
+    font-family:'Montserrat';
+    min-height: 100vh;
+ }
+ 
+h1, form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+h1 {
+    font-size: 4rem;
+    margin: 80px;
+}
+.todo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form input{
+    padding: 0.8rem;
+    font-size: 1.3rem;
+    border: none;
+    background: white;
+    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
+}
+.todo-button {
+    padding: 0.8rem;
+    font-size: 1.3rem;
+    border: none;
+    background: rgb(230, 228, 228);
+    border-radius:  0 5px 5px 0 ;
+    transition: all 0.2s ease;
+} 
+.todo-button:hover {
+    cursor: pointer;
+    background: rgb(207, 207, 207);
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+select {
+    background-color:  rgb(230, 228, 228);
+    cursor: pointer;
+    width: 8rem;
+    padding: 0.3rem;
+    font-size: 1rem;
+    border: none;
+}
+/* adding the arrow back to the drop down bar */
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    background-color:  rgb(230, 228, 228);
+    top: 0;
+    right: 0;
+    padding: 0.3rem;
+    pointer-events: none;
+
+}
+
+
+.todo-list {
+    min-width: 30%;
+    list-style: none;
+}
+.todo {
+    margin: 1.5rem;
+    color: black;
+    background: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.7rem;
+    align-items: center;
+    border-radius: 5px;
+}
+li {
+    flex: 1;
+}
+.delete-btn {
+    color: yellow;
+    background: black;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    border-radius:  0 5px 5px 0;
+    transition: all 0.2s ease;
+}
+.delete-btn:hover {
+    color: black;
+    background: yellow;  
+}
+.complete-btn{
+    background: green;
+    /* margin-right: 2px; */
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.complete-btn:hover{
+    background: rgb(0, 173, 0);
+}
+.todo-item {
+    padding: 0 0.5rem;
+}
+.fa-trash, .fa-check {
+    pointer-events: none;
+}
+/* Css effect: When the completed button is clicked */
+.completed {
+    text-decoration: line-through;
+    opacity: 0.4;
+}
+
+@media  (max-width: 420px) {
+    h1 {
+        font-size: 2.2rem;
+        margin: 50px;
+    }
+    form input{
+        padding: 0.3rem;
+        font-size: 1rem;
+        border-radius: 3px;
+        border-radius: 3px 0 0 3px;
+    }
+    .add-btn {
+        padding: 0.3rem;
+        font-size: 1rem;
+        border-radius:  0 3px 3px 0 ;
+    } 
+    .todo {
+        margin: 1.2rem;
+        font-size: 0.8rem;
+        border-radius: 3px;
+    }
+    .delete-btn {      
+        padding: 0.3rem;
+        font-size: 0.5rem;
+        border-radius:  0 3px 3px 0 ;
+    }
+    .complete-btn{       
+        padding: 0.3rem;       
+        font-size: 0.5rem;
+        border-radius: 3px 0 0 3px;
+    }
+}
