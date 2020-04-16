@@ -30,7 +30,7 @@ function addTodo(e){
 
     //to stop user from submitting an empty todo item
     if( todoInput.value === '') {
-        alert('djdfjdfhvbdf')
+        alert('You need to enter a task')
     } else {
         todoList.appendChild(todoDiv)
         saveLocalTodo(todoInput.value)
