@@ -1,27 +1,52 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Roboto&display=swap');
-
- 
  
  * {
     margin: 0;
     padding: 0;
  }
-
  body{
-    background-color: gray;
+    background: linear-gradient(rgba(63, 42, 36, 0.85),rgba(41, 27, 23, 0.9)), url(image4.1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     font-family:'Montserrat';
     min-height: 100vh;
+    box-sizing: border-box;
  }
- 
+
+ .todo-wrapper{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    top: 9rem;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 30%;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 55px rgb(17, 17, 17);
+ }
 h1, form {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 50px;
+    margin: 5px;
+}
+.input-wrapper {
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;   
 }
 h1 {
     font-size: 4rem;
-    margin: 80px;
+    margin: 50px;
+    color: rgb(192, 192, 192);
+    text-shadow: 0 0 15px  rgb(32, 32, 32);
 }
 .todo-container {
     display: flex;
@@ -33,8 +58,9 @@ form input{
     font-size: 1.3rem;
     border: none;
     background: white;
-    border-radius: 5px;
     border-radius: 5px 0 0 5px;
+    width: 100%;
+    margin-left: 10px
 }
 .todo-button {
     padding: 0.8rem;
@@ -48,7 +74,6 @@ form input{
     cursor: pointer;
     background: rgb(207, 207, 207);
 }
-
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -57,31 +82,32 @@ select {
     border: none;
 }
 .select {
-    margin: 1rem;
+    margin: 10px;
     position: relative;
     overflow: hidden;
 }
 select {
     background-color:  rgb(230, 228, 228);
     cursor: pointer;
-    width: 8rem;
+    width: 9rem;
     padding: 0.3rem;
     font-size: 1rem;
     border: none;
+    transition: all 0.2s ease;
+}
+select:hover {
+    background-color: rgb(207, 207, 207);
 }
 /* adding the arrow back to the drop down bar */
-.select::after {
+/* .select::after {
     content: "\25BC";
     position: absolute;
     background-color:  rgb(230, 228, 228);
     top: 0;
     right: 0;
     padding: 0.3rem;
-    pointer-events: none;
-
-}
-
-
+    pointer-events: none;  
+} */
 .todo-list {
     min-width: 30%;
     list-style: none;
@@ -92,7 +118,7 @@ select {
     background: whitesmoke;
     display: flex;
     justify-content: space-between;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     align-items: center;
     border-radius: 5px;
 }
@@ -100,27 +126,28 @@ li {
     flex: 1;
 }
 .delete-btn {
-    color: yellow;
+    color: rgb(196, 196, 196);
     background: black;
-    padding: 1rem;
+    padding: .5rem;
     border: none;
     cursor: pointer;
     font-size: 1rem;
-    border-radius: 5px;
+    /* border-radius: 3px; */
     border-radius:  0 5px 5px 0;
     transition: all 0.2s ease;
 }
 .delete-btn:hover {
     color: black;
-    background: yellow;  
+    background: rgb(196, 196, 196);  
 }
 .complete-btn{
-    background: green;
+    background: rgb(196, 196, 196);
     /* margin-right: 2px; */
-    padding: 1rem;
+    padding: .5rem;
     border: none;
     cursor: pointer;
     font-size: 1rem;
+    transition: all 0.2s ease;
 }
 .complete-btn:hover{
     background: rgb(0, 173, 0);
@@ -137,10 +164,53 @@ li {
     opacity: 0.4;
 }
 
-@media  (max-width: 420px) {
+footer{  
+    background-color: rgba(63, 42, 36, 0.85);
+    color: rgb(95, 95, 95);
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+    position: absolute;   
+    bottom: 0;
+    right: 0;  
+}
+
+img {
+    max-width: 50px;
+    max-height: 50px;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+p {
+    font-size: 20px;
+    color: rgb(94, 94, 94);
+    position: absolute;
+    right: 80px;
+    bottom: 27px;
+}
+
+
+@media  (max-width: 1300px) {
+    .todo-wrapper{
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        left: 0;
+        margin: auto;
+        width: 80%;     
+     }
+     .input-wrapper {
+        display: flex;
+        width: 80%;
+        position: relative;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;       
+    }
     h1 {
-        font-size: 2.2rem;
-        margin: 50px;
+        font-size: 2rem;
+        margin: 30px;
     }
     form input{
         padding: 0.3rem;
@@ -148,7 +218,7 @@ li {
         border-radius: 3px;
         border-radius: 3px 0 0 3px;
     }
-    .add-btn {
+    .todo-button {
         padding: 0.3rem;
         font-size: 1rem;
         border-radius:  0 3px 3px 0 ;
@@ -167,5 +237,77 @@ li {
         padding: 0.3rem;       
         font-size: 0.5rem;
         border-radius: 3px 0 0 3px;
+    }
+    select {
+        background-color:  rgb(230, 228, 228);
+        cursor: pointer;
+        width: 9rem;
+        padding: 0.3rem;
+        font-size: 1rem;
+        border: none;
+        transition: all 0.2s ease;
+    }
+}
+@media  (max-width: 675px) {
+    .todo-wrapper{
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        left: 0;
+        margin: auto;
+        width: 80%;      
+     }
+    h1 {
+        font-size: 2rem;
+        margin: 30px;
+    }
+    form input{
+        padding: 0.3rem;
+        font-size: 1rem;
+        border-radius: 3px;
+        border-radius: 3px 0 0 3px;
+    }
+    .todo-button {
+        padding: 0.3rem;
+        font-size: 1rem;
+        border-radius:  0 3px 3px 0 ;
+    } 
+    .todo {
+        margin: 1.2rem;
+        font-size: 0.8rem;
+        border-radius: 3px;
+    }
+    .delete-btn {      
+        padding: 0.3rem;
+        font-size: 0.5rem;
+        border-radius:  0 3px 3px 0 ;
+    }
+    .complete-btn{       
+        padding: 0.3rem;       
+        font-size: 0.5rem;
+        border-radius: 3px 0 0 3px;
+    }
+    select {
+        background-color:  rgb(230, 228, 228);
+        cursor: pointer;
+        width: 6.5rem;
+        padding: 0.2rem;
+        font-size: 0.5rem;
+        border: none;
+        transition: all 0.2s ease;
+    }
+    img {
+        max-width: 30px;
+        max-height: 30px;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+    p {
+        font-size: 10px;
+        color: rgb(94, 94, 94);
+        position: absolute;
+        right: 45px;
+        bottom: 17px;
     }
 }
