@@ -1,6 +1,9 @@
 # Todo-List
 A Todo-list made with HTML, CSS and JavaScript
 
+A Todo-list that stores items in the local storage. 
+Items can be marked as complete and deleted once they are added to the Todo-List.
+
 See Todo-list below:
 https://harryminnie6.github.io/Todo-List/
 
